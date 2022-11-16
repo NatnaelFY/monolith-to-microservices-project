@@ -22,7 +22,7 @@ jobs:
             docker tag udagram-api-user natnaelf/udagram-api-user:v4a
             
             docker build -t udagram-frontend ./udagram-frontend
-            docker tag udagram-frontend natnaelf/udagram-frontend:local
+            docker tag udagram-frontend natnaelf/udagram-frontend:v4a
             docker build -t udagram-reverseproxy ./udagram-reverseproxy
             docker tag udagram-reverseproxy natnaelf/udagram-reverseproxy:v4a
             echo "-------- All images succesfully built----------"
@@ -31,7 +31,7 @@ jobs:
             echo "-------------- Pushing images to dockerhub-------"
             docker push natnaelf/udagram-api-feed:v4a
             docker push natnaelf/udagram-api-user:v4a
-            docker push natnaelf/udagram-frontend:local
+            docker push natnaelf/udagram-frontend:v4a
             docker push natnaelf/udagram-reverseproxy:v4a
 workflows:
   default:
