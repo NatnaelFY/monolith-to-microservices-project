@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   appName: 'Natis Udagram Microservice app',
-  apiHost: 'http://localhost:8100'
+  apiHost: 'http://ae9f3d789b5ea41b1b4c3ec882ead80c-586724615.us-east-2.elb.amazonaws.com'
 };
 
 /*
