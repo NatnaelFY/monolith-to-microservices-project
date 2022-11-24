@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: docker.io/natnaelf/udagram-frontend:v4a
-        ports: 
+        image: natnaelf/udagram-frontend:v4a
+        ports:
         - containerPort: 80
         resources:
           limits:

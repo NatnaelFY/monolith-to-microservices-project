@@ -2,11 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: api-feed
+  labels:
+    run: api-feed
 spec:
+  replicas: 2
   selector:
     matchLabels:
       run: api-feed
-  replicas: 2
   template:
     metadata:
       labels:
@@ -14,7 +16,7 @@ spec:
     spec:
       containers:
       - name: api-feed
-        image: docker.io/natnaelf/udagram-api-feed:v4a
+        image: natnaelf/udagram-api-feed:v4a
         ports:
         - containerPort: 80
         resources:
@@ -22,6 +24,12 @@ spec:
             cpu: 500m
           requests:
             cpu: 200m
+        envFrom:
+          - configMapRef:
+              name: env-config
+          - secretRef:
+             name: env-secret
+
 
 ---
 apiVersion: v1

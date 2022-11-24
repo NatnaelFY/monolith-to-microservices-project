@@ -14,14 +14,14 @@ spec:
     spec:
       containers:
       - name: reverseproxy
-        image: docker.io/natnaelf/udagram-reverseproxy:v4a
+        image: natnaelf/udagram-reverseproxy:v4a
         ports:
         - containerPort: 80
         resources:
           limits:
-            cpu: 1000m
-          requests:
             cpu: 500m
+          requests:
+            cpu: 200m
 
 ---
 apiVersion: v1
